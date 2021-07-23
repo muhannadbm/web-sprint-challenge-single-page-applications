@@ -6,17 +6,19 @@ let filter = null
 filter = order !== null ? topping.filter(e => order[e]) : null
 
 return(
-order ? <div><h1>your order is being made</h1> <div><button onClick={()=> reset()}>Make another order ?</button></div>
+order ? <div class="done"><h1>Your order is being prepared!</h1> 
 <div className="info">
 <p>Name: {order.name}</p>
 <p>Size: {order.size}</p>
 <p>Toppings: {filter.length != 0 ? filter.map(e => {
-    return <p key={e.id}>{e}</p>
+    return <p class="topel" key={e.id}>{e}</p>
 }) : 'No Toppings'} </p>
 <p>Special Notes: {order.specialtext}</p>
 
 </div>
-</div> :
+<div><button onClick={()=> reset()}>Make another order ?</button></div>
+</div>
+ :
 
 
 
@@ -25,8 +27,9 @@ order ? <div><h1>your order is being made</h1> <div><button onClick={()=> reset(
 <h2>Build your Pizza now!</h2>
 <form id="pizza-form" onSubmit={submit}>
 <div className="inputhead">
-<h3>Name on order:*</h3> <p>{errors.name}</p>
+<h3>Name on order:*</h3>
 <input id="name-input" type="text" name="name" onChange={e=>change(e)} value={values.name} />
+<p>{errors.name}</p>
 </div>
 <div className="inputhead">
 <h3>Pizza size:*</h3>
@@ -38,18 +41,20 @@ order ? <div><h1>your order is being made</h1> <div><button onClick={()=> reset(
 </select> </div>
 <div className="inputhead">
 <h3>Toppings:</h3>
+<div className="topping">
 <input type="checkbox" checked={values.Pepperoni} name="Pepperoni" value="Pepperoni" onChange={e=>change(e)}/>Pepperoni
 <input type="checkbox" checked={values.Mushroom} name="Mushroom" value="Mushroom" onChange={e=>change(e)}/>Mushroom
 <input type="checkbox" checked={values.Extra_Cheese}  value="Extra_Cheese" name="Extra_Cheese" onChange={e=>change(e)}/>Extra Cheese
 <input type="checkbox" checked={values.Sausage}  value="Sausage" name="Sausage" onChange={e=>change(e)}/> Sausage
 <input type="checkbox" checked={values.Onion}  value="Onion" name="Onion" onChange={e=>change(e)}/>Onion
-
+</div>
 </div>
 <div className="inputhead">
 <h3>Special Notes:</h3>
 <input type="text" id="special-text" name="specialtext" value={values.specialtext} onChange={e=>change(e)}/>
 </div> 
-<button disabled = {disabled} id="order-button">Add to Order</button>
+<div className="buttoncontainer">
+<button disabled = {disabled} id="order-button">Add to Order</button> </div>
 </form>
 </div>)
 }
