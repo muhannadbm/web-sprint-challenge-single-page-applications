@@ -11,3 +11,91 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p{
+  /* display: inline; */
+  width: 13rem;
+  text-align: center;
+}
+.rest{
+  display: inline-block;
+  border: solid;
+  width: min-content;
+  background-color: #ea8f3e;
+  color: white;
+  font-weight: bold;
+
+
+  
+}
+.restlist{
+  display: flex;
+justify-content: space-evenly;
+}
+.image{
+  width: 100%;
+  min-height: 13rem;
+}
+.header a:nth-child(1){
+  border: 0;
+
+}
+.header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 13vh;
+  background-color: #ab0012;
+  margin-bottom: 1rem;
+}
+.header h1 {
+  display: inline;
+  padding: 1.2rem;
+  border-radius: 50%;
+  color: white;
+  padding: 0.8rem;
+  border: 1px solid;
+
+}
+.cover a {
+  text-decoration: none;
+}
+
+.header a{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  border: 1px solid;
+  margin-right: 11rem;
+  padding: 0.6rem;
+}
+
+.logo{
+  flex: 4 1;
+
+}
+
+.maincontainer{
+  width: 80%;
+  margin: auto
+}
+.cover{
+  background-image: url('./assets/Pizza.jpg');
+  height: 72vh;
+  text-align: center;
+  display: flex;
+}
+.cover a {
+  background: #028f46;
+  margin: auto;
+  padding: 2rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  margin-bottom: 6rem;
+}
+.cover a:hover{
+  background-color: #14a057;
+  cursor: pointer;
+}
